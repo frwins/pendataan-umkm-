@@ -8,7 +8,7 @@ class DatadiriModel extends Model
 {
     protected $table = 'datadiri';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id', 'KTP', 'nama', 'alamat', 'pekerjaan', 'pendapatan', 'telpon'];
+    protected $allowedFields = ['id', 'id_user', 'KTP', 'nama', 'alamat', 'pekerjaan', 'pendapatan', 'telpon'];
 
     public function getdatadiri($id = false)
     {

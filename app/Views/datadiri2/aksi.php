@@ -1,6 +1,9 @@
 <?= $this->extend('layout2/index'); ?>
 <?= $this->section('page-content'); ?>
 
+<?php
+
+?>
 
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 
@@ -15,9 +18,18 @@
             <?php endif; ?>
         </div>
         <div class="col-md">
-            <?php foreach ($datadiri2 as $d) : ?>
-                <a href="/datadiri2/kirim/<?= $d['id']; ?>" class="btn btn-outline-success shadow float-right">Kirim</a>
-            <?php endforeach; ?>
+            <?php
+            if (!empty($datadiri2))
+            {
+            ?>
+                
+                <a href="/datadiri2/kirim/<?= $datadiri2['id']; ?>" class="btn btn-outline-success shadow float-right">Kirim</a>
+            <?php
+            
+            }
+            ?>
+            
+            
         </div>
         <table class="table">
             <thead>
@@ -33,25 +45,30 @@
                 </tr>
             </thead>
             <tbody>
-
+                <?php
+                if (!empty($datadiri2))
+                            {
+                            ?>
                 <?php $i = 1; ?>
-                <?php foreach ($datadiri2 as $d) : ?>
+                
 
                     <tr>
                         <th scope="row"><?= $i++; ?></th>
-                        <td><?= $d['KTP']; ?></td>
-                        <td><?= $d['nama']; ?></td>
-                        <td><?= $d['alamat']; ?></td>
-                        <td><?= $d['pekerjaan']; ?></td>
-                        <td><?= $d['pendapatan']; ?></td>
-                        <td><?= $d['telpon']; ?></td>
+                        <td><?= $datadiri2['KTP']; ?></td>
+                        <td><?= $datadiri2['nama']; ?></td>
+                        <td><?= $datadiri2['alamat']; ?></td>
+                        <td><?= $datadiri2['pekerjaan']; ?></td>
+                        <td><?= $datadiri2['pendapatan']; ?></td>
+                        <td><?= $datadiri2['telpon']; ?></td>
                         <td>
-                            <a href="/datadiri2/edit/<?= $d['id']; ?>" class="btn btn-warning">Edit</a>
-                            <a href="/datadiri2/delete/<?= $d['id']; ?>" class="btn btn-danger">Delete</a>
+                            <a href="/datadiri2/edit/<?= $datadiri2['id']; ?>" class="btn btn-warning">Edit</a>
+                            <a href="/datadiri2/delete/<?= $datadiri2['id']; ?>" class="btn btn-danger">Delete</a>
 
                         </td>
                     </tr>
-                <?php endforeach; ?>
+                <?php
+                            }
+                ?>
             </tbody>
         </table>
 

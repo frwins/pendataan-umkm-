@@ -3,25 +3,30 @@
 namespace App\Controllers;
 
 use \App\Models\datadirimodel2;
+use \App\Models\UsersModel;
 
 
-class datadiri2 extends BaseController
+class Datadiri2 extends BaseController
 {
     protected $datadirimodel2;
+    
 
     public function __construct()
     {
         $this->datadirimodel2 = new datadirimodel2();
+        $this->UsersModel = new UsersModel();
     }
 
     public function aksi()
     {
-
-        $datadiri2 = $this->datadirimodel2->findAll();
+        $session = session();
+        $id_user = $session->get('id');
+        $datadiri2 = $this->datadirimodel2->where(['id_user' => $id_user])->first();
+        // $datadiri2 = $this->datadirimodel2->getData(9);
 
 
         $data = [
-            'tittle' => 'Data diri',
+            'title' => 'Data diri',
             'datadiri2' => $datadiri2,
             'validation' => \Config\Services::validation()
         ];
@@ -87,6 +92,8 @@ class datadiri2 extends BaseController
 
     public function save()
     {
+        $session = session();
+        $id_user = $session->get('id');
         // validasi input
         if (!$this->validate([
             'KTP' => [
@@ -132,13 +139,15 @@ class datadiri2 extends BaseController
                     'numeric' => '{field} harus diisi dengan angka'
                 ]
             ],
+
+            
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('datadiri2/tambah')->withInput()->with('validation', $validation);
         }
 
         $this->datadirimodel2->save([
-
+            'id_user' => $id_user,
             'KTP' => $this->request->getVar('KTP'),
             'nama' => $this->request->getVar('nama'),
             'alamat' => $this->request->getVar('alamat'),

@@ -105,6 +105,7 @@ class Auth2 extends BaseController
                 //jika data cocok
                 session()->set('log', true);
                 session()->set('username', $cek['username']);
+                session()->set('id', $cek['id']);
 
                 return redirect()->to(base_url('datadiri2/dashboard'));
             } else {
