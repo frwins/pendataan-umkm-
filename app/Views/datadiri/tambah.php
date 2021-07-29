@@ -16,7 +16,7 @@
                 <div class="row mb-3">
                     <label for="KTP" class="col-sm-2 col-form-label">KTP</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('KTP')) ? 'is-invalid' : ''; ?>" id="KTP" name="KTP" value="<?= old('KTP'); ?>" placeholder="Masukan KTP anda">
+                        <input type="text" class="form-control <?= ($validation->hasError('KTP')) ? 'is-invalid' : ''; ?>" id="KTP" name="KTP" value="<?= old('KTP'); ?>" placeholder="Contoh : 3320132610000002">
                         <div class="invalid-feedback">
                             <?= $validation->getError('KTP'); ?>
                         </div>
@@ -97,7 +97,7 @@
     <div class="row mb-3">
         <label for="telpon" class="col-sm-2 col-form-label">telpon</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="masukan nomer anda">
+            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
             <div class=" invalid-feedback">
                 <?= $validation->getError('telpon'); ?>
             </div>

@@ -8,8 +8,8 @@
 <div class="container">
     <div class="d-flex align-items-center p-3 my-3 text-black bg-purple rounded shadow-sm">
         <div class="lh-1">
-            <h1 class="h6 mb-0 text-black lh-1">Halo, Admin</h1>
-            <small>Selamat Datang kembali</small>
+            <h1 class="h6 mb-0 text-black lh-1">Selamat Datang</h1>
+            <small>Silahkan Isi data anda</small>
         </div>
     </div>
 </div>
@@ -48,32 +48,6 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div class="calendar">
-        <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">
-                <h1></h1>
-                <p></p>
-            </div>
-            <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-            <div>Min</div>
-            <div>sen</div>
-            <div>sel</div>
-            <div>rab</div>
-            <div>kam</div>
-            <div>jum</div>
-            <div>sab</div>
-        </div>
-        <div class="days"></div>
-    </div>
-</div>
-
-
-
 
 
 

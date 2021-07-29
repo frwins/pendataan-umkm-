@@ -49,28 +49,6 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="calendar">
-        <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">
-                <h1></h1>
-                <p></p>
-            </div>
-            <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-            <div>Min</div>
-            <div>sen</div>
-            <div>sel</div>
-            <div>rab</div>
-            <div>kam</div>
-            <div>jum</div>
-            <div>sab</div>
-        </div>
-        <div class="days"></div>
-    </div>
-</div>
 
 
 

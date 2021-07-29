@@ -16,7 +16,7 @@
                 <div class="row mb-3">
                     <label for="KTP" class="col-sm-2 col-form-label">KTP</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('KTP')) ? 'is-invalid' : ''; ?>" id="KTP" name="KTP" value="<?= old('KTP'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('KTP')) ? 'is-invalid' : ''; ?>" id="KTP" name="KTP" value="<?= old('KTP'); ?>" placeholder=" Contoh : 3320132610000002">
                         <div class="invalid-feedback">
                             <?= $validation->getError('KTP'); ?>
                         </div>
@@ -25,7 +25,7 @@
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id=" nama" name="nama" value="<?= old('nama'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id=" nama" name="nama" value="<?= old('nama'); ?>" placeholder="Masukan Nama Anda">
                         <div class=" invalid-feedback">
                             <?= $validation->getError('nama'); ?>
                         </div>
@@ -34,7 +34,7 @@
                 <div class="row mb-3">
                     <label for="alamat" class="col-sm-2 col-form-label">alamat</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>" placeholder="Masukan Alamat lengkap Anda">
                         <div class="invalid-feedback">
                             <?= $validation->getError('alamat'); ?>
                         </div>
@@ -43,7 +43,7 @@
                 <div class="row mb-3">
                     <label for="pekerjaan" class="col-sm-2 col-form-label">pekerjaan</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id=" pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>">
+                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id=" pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>" placeholder="Masukan Nama Pekerjaan Anda">
                         <div class=" invalid-feedback">
                             <?= $validation->getError('pekerjaan'); ?>
                         </div>
@@ -97,7 +97,7 @@
     <div class="row mb-3">
         <label for="telpon" class="col-sm-2 col-form-label">telpon</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>">
+            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
             <div class=" invalid-feedback">
                 <?= $validation->getError('telpon'); ?>
             </div>

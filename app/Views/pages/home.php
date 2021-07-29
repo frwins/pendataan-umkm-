@@ -185,12 +185,14 @@
             <div class="row">
                 <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
                     <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                    <div>081233213858</div>
+                    <div>
+                        <a href="https://api.whatsapp.com/send?phone=+6281233213858&text=Hubungi jika di daftarkan oleh admin">081233213858</a>
+                    </div>
                 </div>
                 <div class="col-lg-4 mr-auto text-center">
                     <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
 
-                    <a class="d-block" href="mailto:contact@yourwebsite.com">erwin.fr43@gmail.com</a>
+                    <a class="d-block" href="erwin.fr43@gmail.com">erwin.fr43@gmail.com</a>
                 </div>
             </div>
         </div>
