@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \App\Models\DatadiriModel;
+use \App\Models\DatadiriModel2;
 
 
 class Datadiri extends BaseController
@@ -12,17 +13,20 @@ class Datadiri extends BaseController
     public function __construct()
     {
         $this->DatadiriModel = new DatadiriModel();
+        $this->DatadiriModel2 = new DatadiriModel2();
     }
 
     public function aksi()
     {
 
         $datadiri = $this->DatadiriModel->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
 
 
         $data = [
             'tittle' => 'Data diri',
             'datadiri' => $datadiri,
+            'datadiri2' => $datadiri2,
             'validation' => \Config\Services::validation()
         ];
 
@@ -73,6 +77,8 @@ class Datadiri extends BaseController
 
     public function save()
     {
+        $session = session();
+        $id_user = $session->get('id');
         // validasi input
         if (!$this->validate([
             'KTP' => [
@@ -124,7 +130,7 @@ class Datadiri extends BaseController
         }
 
         $this->DatadiriModel->save([
-
+            'id_user' => $id_user,
             'KTP' => $this->request->getVar('KTP'),
             'nama' => $this->request->getVar('nama'),
             'alamat' => $this->request->getVar('alamat'),
@@ -231,5 +237,12 @@ class Datadiri extends BaseController
             'datadiri' => $this->DatadiriModel->getdatadiri()
         ];
         echo view('datadiri/excel', $data);
+    }
+
+    public function delete2($id_user)
+    {
+        $this->DatadiriModel2->delete($id_user);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus');
+        return redirect()->to('datadiri/aksi');
     }
 }

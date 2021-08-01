@@ -50,6 +50,23 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
+                <?php foreach ($datadiri2 as $d) : ?>
+
+                    <tr>
+                        <th scope="row"><?= $i++; ?></th>
+                        <td><?= $d['KTP']; ?></td>
+                        <td><?= $d['nama']; ?></td>
+                        <td><?= $d['alamat']; ?></td>
+                        <td><?= $d['pekerjaan']; ?></td>
+                        <td><?= $d['pendapatan']; ?></td>
+                        <td><?= $d['telpon']; ?></td>
+                        <td>
+                            <a href="/datadiri/edit/<?= $d['id']; ?>" class="btn btn-warning">Edit</a>
+                            <a href="/datadiri/delete2/<?= $d['id']; ?>" class="btn btn-danger">Delete</a>
+
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
 

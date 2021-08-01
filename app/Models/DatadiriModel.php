@@ -17,4 +17,13 @@ class DatadiriModel extends Model
         }
         return $this->where(['id' => $id])->first();
     }
+
+    public function getData($id_user)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('datadiri');
+        $query   = $builder->get(); 
+        
+        return $query;
+    }
 }

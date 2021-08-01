@@ -39,7 +39,7 @@ $routes->get('datadiri/edit/(:any)', 'Datadiri::edit/$1');
 $routes->get('datadiri2/edit/(:any)', 'Datadiri2::edit/$1');
 
 
-$routes->get('datadiri/aksi/(:any)', 'Datadiri2::kirim/$1');
+$routes->get('datadiri2/aksi/(:any)', 'Datadir2::kirim/$1');
 
 
 /*

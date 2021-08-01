@@ -51,18 +51,28 @@ class Datadiri2 extends BaseController
         return view('datadiri2/tambah', $data);
     }
 
-    public function kirim($id)
+    public function kirim()
     {
-        $d = $this->datadirimodel2->findAll();
-        $data = [
-            'datadiri2' => $d,
-            'validation' => \Config\Services::validation()
-        ];
-        $d = $this->datadirimodel2->save(['id' => $id]);
-        session()->setFlashdata('pesan', 'Data berhasil dikirim');
-        return redirect()->to('datadiri/aksi');
-    }
+        
+            $session = session();
+            $id_user = $session->get('id_user');
+       
 
+
+        $this->datadirimodel2->update([
+            'id_user' => $id_user,
+            'KTP' => $this->request->getVar('KTP'),
+            'nama' => $this->request->getVar('nama'),
+            'alamat' => $this->request->getVar('alamat'),
+            'pekerjaan' => $this->request->getVar('pekerjaan'),
+            'pendapatan' => $this->request->getVar('pendapatan'),
+            'telpon' => $this->request->getVar('telpon')
+        ]);
+
+        session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
+
+        return redirect()->to('datadiri2/aksi');
+    }
 
     public function create()
     {
@@ -161,9 +171,9 @@ class Datadiri2 extends BaseController
         return redirect()->to('datadiri2/aksi');
     }
 
-    public function delete($id)
+    public function delete($id_user)
     {
-        $this->datadirimodel2->delete($id);
+        $this->datadirimodel2->delete($id_user);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('datadiri2/aksi');
     }
