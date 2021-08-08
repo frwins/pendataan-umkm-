@@ -31,7 +31,19 @@ header("content-Disposition: attachment; filename=Data datadiri.xls");
                     <td><?= $d['pekerjaan']; ?></td>
                     <td><?= $d['pendapatan']; ?></td>
                     <td><?= $d['telpon']; ?></td>
+                </tr>
+            <?php endforeach; ?>
 
+            <?php foreach ($datadiri2 as $d) : ?>
+
+                <tr>
+                    <th scope="row"><?= $i++; ?></th>
+                    <td><?= $d['KTP']; ?></td>
+                    <td><?= $d['nama']; ?></td>
+                    <td><?= $d['alamat']; ?></td>
+                    <td><?= $d['pekerjaan']; ?></td>
+                    <td><?= $d['pendapatan']; ?></td>
+                    <td><?= $d['telpon']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

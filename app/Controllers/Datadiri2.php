@@ -8,12 +8,12 @@ use \App\Models\UsersModel;
 
 class Datadiri2 extends BaseController
 {
-    protected $datadirimodel2;
-    
+    protected $DatadiriModel2;
+
 
     public function __construct()
     {
-        $this->datadirimodel2 = new datadirimodel2();
+        $this->DatadiriModel2 = new datadirimodel2();
         $this->UsersModel = new UsersModel();
     }
 
@@ -21,9 +21,8 @@ class Datadiri2 extends BaseController
     {
         $session = session();
         $id_user = $session->get('id');
-        $datadiri2 = $this->datadirimodel2->where(['id_user' => $id_user])->first();
+        $datadiri2 = $this->DatadiriModel2->where(['id_user' => $id_user])->first();
         // $datadiri2 = $this->datadirimodel2->getData(9);
-
 
         $data = [
             'title' => 'Data diri',
@@ -38,7 +37,7 @@ class Datadiri2 extends BaseController
     public function tambah()
     {
 
-        $datadiri2 = $this->datadirimodel2->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
 
 
         $data = [
@@ -51,28 +50,6 @@ class Datadiri2 extends BaseController
         return view('datadiri2/tambah', $data);
     }
 
-    public function kirim()
-    {
-        
-            $session = session();
-            $id_user = $session->get('id_user');
-       
-
-
-        $this->datadirimodel2->update([
-            'id_user' => $id_user,
-            'KTP' => $this->request->getVar('KTP'),
-            'nama' => $this->request->getVar('nama'),
-            'alamat' => $this->request->getVar('alamat'),
-            'pekerjaan' => $this->request->getVar('pekerjaan'),
-            'pendapatan' => $this->request->getVar('pendapatan'),
-            'telpon' => $this->request->getVar('telpon')
-        ]);
-
-        session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
-
-        return redirect()->to('datadiri2/aksi');
-    }
 
     public function create()
     {
@@ -85,7 +62,7 @@ class Datadiri2 extends BaseController
 
     public function dashboard()
     {
-        $datadiri2 = $this->datadirimodel2->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
 
 
 
@@ -107,10 +84,9 @@ class Datadiri2 extends BaseController
         // validasi input
         if (!$this->validate([
             'KTP' => [
-                'rules' => 'required|numeric|is_unique[datadiri2.KTP]',
+                'rules' => 'required|is_unique[datadiri2.KTP]',
                 'errors' => [
                     'required' => '{field} anda harus diisi',
-                    'numeric' => '{field} harus diisi dengan angka',
                     'is_unique' => '{field} sudah terdaftar'
                 ]
             ],
@@ -150,13 +126,13 @@ class Datadiri2 extends BaseController
                 ]
             ],
 
-            
+
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('datadiri2/tambah')->withInput()->with('validation', $validation);
         }
 
-        $this->datadirimodel2->save([
+        $this->DatadiriModel2->save([
             'id_user' => $id_user,
             'KTP' => $this->request->getVar('KTP'),
             'nama' => $this->request->getVar('nama'),
@@ -173,7 +149,7 @@ class Datadiri2 extends BaseController
 
     public function delete($id_user)
     {
-        $this->datadirimodel2->delete($id_user);
+        $this->DatadiriModel2->delete($id_user);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('datadiri2/aksi');
     }
@@ -185,7 +161,7 @@ class Datadiri2 extends BaseController
         $data = [
             'title' => 'Form Ubah Data',
             'validation' => \Config\Services::validation(),
-            'datadiri2' => $this->datadirimodel2->getdatadiri2($id)
+            'datadiri2' => $this->DatadiriModel2->getdatadiri2($id),
         ];
         return view('datadiri2/edit', $data);
     }
@@ -196,10 +172,9 @@ class Datadiri2 extends BaseController
 
         if (!$this->validate([
             'KTP' => [
-                'rules' => 'required|numeric|is_unique[datadiri2.KTP,id,' . $id . ']',
+                'rules' => 'required|is_unique[datadiri2.KTP,id,' . $id . ']',
                 'errors' => [
                     'required' => '{field} anda harus diisi',
-                    'numeric' => '{field} harus diisi dengan angka',
                     'is_unique' => '{field} sudah terdaftar'
                 ]
             ],
@@ -243,7 +218,7 @@ class Datadiri2 extends BaseController
             return redirect()->to('datadiri2/edit/' . $this->request->getVar('id'))->withInput()->with('validation', $validation);
         }
 
-        $this->datadirimodel2->save([
+        $this->DatadiriModel2->save([
             'id' => $id,
             'KTP' => $this->request->getVar('KTP'),
             'nama' => $this->request->getVar('nama'),
@@ -256,13 +231,5 @@ class Datadiri2 extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil diubah');
 
         return redirect()->to('datadiri2/aksi');
-    }
-
-    public function excel()
-    {
-        $data = [
-            'datadiri2' => $this->datadirimodel2->getdatadiri2()
-        ];
-        echo view('datadiri2/excel', $data);
     }
 }

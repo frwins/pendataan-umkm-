@@ -6,6 +6,7 @@ use \App\Models\DatadiriModel;
 use \App\Models\DatadiriModel2;
 
 
+
 class Datadiri extends BaseController
 {
     protected $DatadiriModel;
@@ -82,10 +83,9 @@ class Datadiri extends BaseController
         // validasi input
         if (!$this->validate([
             'KTP' => [
-                'rules' => 'required|numeric|is_unique[datadiri.KTP]',
+                'rules' => 'required|is_unique[datadiri.KTP]',
                 'errors' => [
                     'required' => '{field} anda harus diisi',
-                    'numeric' => '{field} harus diisi dengan angka',
                     'is_unique' => '{field} sudah terdaftar'
                 ]
             ],
@@ -158,10 +158,13 @@ class Datadiri extends BaseController
         $data = [
             'title' => 'Form Ubah Data',
             'validation' => \Config\Services::validation(),
-            'datadiri' => $this->DatadiriModel->getdatadiri($id)
+            'datadiri' => $this->DatadiriModel->getdatadiri($id),
+            'datadiri2' => $this->DatadiriModel2->getdatadiri2($id),
         ];
         return view('datadiri/edit', $data);
     }
+
+
 
     public function update($id)
     {
@@ -169,10 +172,9 @@ class Datadiri extends BaseController
 
         if (!$this->validate([
             'KTP' => [
-                'rules' => 'required|numeric|is_unique[datadiri.KTP,id,' . $id . ']',
+                'rules' => 'required|is_unique[datadiri.KTP,id,' . $id . ']',
                 'errors' => [
                     'required' => '{field} anda harus diisi',
-                    'numeric' => '{field} harus diisi dengan angka',
                     'is_unique' => '{field} sudah terdaftar'
                 ]
             ],
@@ -226,17 +228,10 @@ class Datadiri extends BaseController
             'telpon' => $this->request->getVar('telpon')
         ]);
 
+
         session()->setFlashdata('pesan', 'Data berhasil diubah');
 
         return redirect()->to('datadiri/aksi');
-    }
-
-    public function excel()
-    {
-        $data = [
-            'datadiri' => $this->DatadiriModel->getdatadiri()
-        ];
-        echo view('datadiri/excel', $data);
     }
 
     public function delete2($id_user)
@@ -244,5 +239,15 @@ class Datadiri extends BaseController
         $this->DatadiriModel2->delete($id_user);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('datadiri/aksi');
+    }
+
+    public function excel()
+    {
+        $data = [
+            'datadiri' => $this->DatadiriModel->getdatadiri(),
+            'datadiri2' => $this->DatadiriModel2->getdatadiri2()
+        ];
+
+        echo  view('datadiri/excel', $data);
     }
 }

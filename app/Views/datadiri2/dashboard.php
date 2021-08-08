@@ -1,7 +1,6 @@
 <?= $this->extend('layout2/index'); ?>
 <?= $this->section('page-content'); ?>
 
-<link rel="stylesheet" href="<?= base_url(); ?>/css/style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -9,7 +8,7 @@
     <div class="d-flex align-items-center p-3 my-3 text-black bg-purple rounded shadow-sm">
         <div class="lh-1">
             <h1 class="h6 mb-0 text-black lh-1">Selamat Datang</h1>
-            <small>Silahkan Isi data anda</small>
+
         </div>
     </div>
 </div>
@@ -24,7 +23,7 @@
             </svg>
 
             <p class="pb-0 mb-0 big lh-sm border-bottom">
-                <strong class="d-block text-gray-dark">Jangan Lupa selalu cek semua data diri</strong>
+                <strong class="d-block text-gray-dark">Harap Isi Data Diri dengan benar, Isi sesuai contoh dalam kolom</strong>
             </p>
         </div>
         <div class="d-flex text-muted pt-3">
@@ -34,7 +33,7 @@
             </svg>
 
             <p class="pb-0 mb-0 big lh-sm border-bottom">
-                <strong class="d-block text-gray-dark">Simpan file excel data UMKM setiap minggu </strong>
+                <strong class="d-block text-gray-dark">Harap mengisi data diri di hari senin-sabtu (Minggu di Reset oleh Admin)</strong>
             </p>
         </div>
         <div class="d-flex text-muted pt-3">
@@ -43,13 +42,11 @@
                 <rect width="100%" height="100%" fill="#6f42c1" /><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
             </svg>
             <p class="pb-0 mb-0 big lh-sm border-bottom">
-                <strong class="d-block text-gray-dark">Jangan Lupa untuk hapus semua data diri di hari minggu</strong>
+                <strong class="d-block text-gray-dark">Mengisi Data diri setelah mengumpulkan KK di balaidesa Brantaksekarjati </strong>
             </p>
         </div>
     </div>
 </div>
 
 
-
-<script src="<?= base_url(); ?>/js/script.js"></script>
 <?= $this->endSection('page-content'); ?>

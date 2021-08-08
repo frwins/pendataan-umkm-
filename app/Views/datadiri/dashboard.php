@@ -1,7 +1,6 @@
 <?= $this->extend('layout/index'); ?>
 <?= $this->section('page-content'); ?>
 
-<link rel="stylesheet" href="<?= base_url(); ?>/css/style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 

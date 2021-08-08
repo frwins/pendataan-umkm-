@@ -31,7 +31,7 @@ class Auth2 extends BaseController
 
         $validation = $this->validate([
             'username' => [
-                'rules' => 'required|is_unique[users.username]|numeric',
+                'rules' => 'required|is_unique[tbl_pengguna.username]|numeric',
                 'errors' => [
                     'required' => 'No.KTP tidak boleh kosong',
                     'is_unique' => 'No.KTP sudah di daftarkan',

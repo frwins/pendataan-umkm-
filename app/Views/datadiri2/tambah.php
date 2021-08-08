@@ -16,7 +16,7 @@
                 <div class="row mb-3">
                     <label for="KTP" class="col-sm-2 col-form-label">KTP</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('KTP')) ? 'is-invalid' : ''; ?>" id="KTP" name="KTP" value="<?= old('KTP'); ?>" placeholder=" Contoh : 3320132610000002">
+                        <input type="text" class="form-control <?= ($validation->hasError('KTP')) ? 'is-invalid' : ''; ?>" id="KTP" name="KTP" value="<?= old('KTP'); ?>" placeholder=" Contoh : 33201326100000-02">
                         <div class="invalid-feedback">
                             <?= $validation->getError('KTP'); ?>
                         </div>
