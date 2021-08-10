@@ -3,6 +3,9 @@
 
 <?php
 
+// var_dump($datadiri2);
+// die;
+
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
@@ -48,24 +51,31 @@
                         <?php
                         if (!empty($datadiri2)) {
                         ?>
-                            <?php $i = 1; ?>
+                            <?php $i = 1; 
+
+                                foreach ($datadiri2 as $data){
+
+                                
+
+                            ?>
 
 
                             <tr>
                                 <th scope="row"><?= $i++; ?></th>
-                                <td><?= $datadiri2['KTP']; ?></td>
-                                <td><?= $datadiri2['nama']; ?></td>
-                                <td><?= $datadiri2['alamat']; ?></td>
-                                <td><?= $datadiri2['pekerjaan']; ?></td>
-                                <td><?= $datadiri2['pendapatan']; ?></td>
-                                <td><?= $datadiri2['telpon']; ?></td>
+                                <td><?= $data['KTP']; ?></td>
+                                <td><?= $data['nama']; ?></td>
+                                <td><?= $data['alamat']; ?></td>
+                                <td><?= $data['pekerjaan']; ?></td>
+                                <td><?= $data['pendapatan']; ?></td>
+                                <td><?= $data['telpon']; ?></td>
                                 <td>
-                                    <a href="/datadiri2/edit/<?= $datadiri2['id']; ?>" class="btn btn-warning">Edit</a>
-                                    <a href="/datadiri2/delete/<?= $datadiri2['id']; ?>" class="btn btn-danger">Delete</a>
+                                    <a href="/datadiri2/edit/<?= $data['id']; ?>" class="btn btn-warning">Edit</a>
+                                    <a href="/datadiri2/delete/<?= $data['id']; ?>" class="btn btn-danger">Delete</a>
 
                                 </td>
                             </tr>
                         <?php
+                                }
                         }
                         ?>
                     </tbody>

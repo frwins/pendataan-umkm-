@@ -21,7 +21,7 @@ class Datadiri2 extends BaseController
     {
         $session = session();
         $id_user = $session->get('id');
-        $datadiri2 = $this->DatadiriModel2->where(['id_user' => $id_user])->first();
+        $datadiri2 = $this->DatadiriModel2->where(['id_user' => $id_user])->findAll();
         // $datadiri2 = $this->datadirimodel2->getData(9);
 
         $data = [
