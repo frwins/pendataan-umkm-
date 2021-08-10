@@ -234,6 +234,75 @@ class Datadiri extends BaseController
         return redirect()->to('datadiri/aksi');
     }
 
+
+    public function update2($id)
+    {
+
+
+        if (!$this->validate([
+            'KTP' => [
+                'rules' => 'required|is_unique[datadiri.KTP,id,' . $id . ']',
+                'errors' => [
+                    'required' => '{field} anda harus diisi',
+                    'is_unique' => '{field} sudah terdaftar'
+                ]
+            ],
+            'nama' => [
+                'rules' => 'required|string',
+                'errors' => [
+                    'required' => '{field} anda harus diisi',
+                    'string' => '{field} harus diisi dengan huruf'
+                ]
+            ],
+
+            'alamat' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} anda harus diisi'
+                ]
+            ],
+            'pekerjaan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} anda harus diisi'
+                ]
+            ],
+
+            'pendapatan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} anda harus diisi'
+                ]
+            ],
+
+            'telpon' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} anda harus diisi',
+                    'numeric' => '{field} harus diisi dengan angka'
+                ]
+            ],
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('datadiri/edit/' . $this->request->getVar('id'))->withInput()->with('validation', $validation);
+        }
+
+        $this->DatadiriModel2->save([
+            'id' => $id,
+            'KTP' => $this->request->getVar('KTP'),
+            'nama' => $this->request->getVar('nama'),
+            'alamat' => $this->request->getVar('alamat'),
+            'pekerjaan' => $this->request->getVar('pekerjaan'),
+            'pendapatan' => $this->request->getVar('pendapatan'),
+            'telpon' => $this->request->getVar('telpon')
+        ]);
+
+
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
+
+        return redirect()->to('datadiri/aksi');
+    }
+
     public function delete2($id_user)
     {
         $this->DatadiriModel2->delete($id_user);

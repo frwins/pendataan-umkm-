@@ -1,6 +1,10 @@
 <?= $this->extend('layout/index'); ?>
 <?= $this->section('page-content'); ?>
 
+<?php
+
+?>
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -10,9 +14,27 @@
                     <?= session()->getFlashdata('pesan'); ?>
                 </div>
             <?php endif; ?>
+            
+            <?php
+            if (empty($datadiri))
+            {
+                $datadiri = $datadiri2;
+            ?>
+                <form action="/datadiri/update2/<?= $datadiri['id']; ?>" method="post">
+            <?php
+            
+            }else{
 
+            ?>
+            
+            
             <form action="/datadiri/update/<?= $datadiri['id']; ?>" method="post">
-                <?= csrf_field(); ?>
+            <?php
+            }
+            ?>
+            
+            
+            <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $datadiri['id']; ?>">
                 <div class="row mb-3">
                     <label for="KTP" class="col-sm-2 col-form-label">KTP</label>

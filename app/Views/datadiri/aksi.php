@@ -62,7 +62,7 @@
                             <td><?= $d['pendapatan']; ?></td>
                             <td><?= $d['telpon']; ?></td>
                             <td>
-
+                                <a href="/datadiri/edit/<?= $d['id']; ?>" class="btn btn-warning">Edit</a>
                                 <a href="/datadiri/delete2/<?= $d['id']; ?>" class="btn btn-danger">Delete</a>
 
                             </td>
