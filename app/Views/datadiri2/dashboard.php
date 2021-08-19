@@ -42,7 +42,7 @@
                 <rect width="100%" height="100%" fill="#6f42c1" /><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
             </svg>
             <p class="pb-0 mb-0 big lh-sm border-bottom">
-                <strong class="d-block text-gray-dark">Mengisi Data diri setelah mengumpulkan KK di balaidesa Brantaksekarjati </strong>
+                <strong class="d-block text-gray-dark">Lebih baik mengisi data diri setelah mengumpulkan KK di balaidesa Brantaksekarjati </strong>
             </p>
         </div>
     </div>

@@ -107,7 +107,7 @@ class Datadiri2 extends BaseController
             'pekerjaan' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} anda harus diisi'
+                    'required' => '{field} / penjualan anda harus diisi'
                 ]
             ],
 

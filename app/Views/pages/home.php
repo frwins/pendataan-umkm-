@@ -57,119 +57,27 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">Apa itu UMKM</h2>
+                    <h2 class="text-white mt-0">Cara Daftar data diri UMKM di desa Brantaksekarjati </h2>
                     <hr class="divider light my-4" />
-                    <p class="text-white-50 mb-1">UMKM adalah akronim dari usaha mikro,usaha kecil, dan usaha menengah. </p>
+                    <p class="text-white-50 mb-1">~ Mendaftarkan dengan nomer KTP (bagian menu login pengguna, dan buat akun)</p>
+
+                    <p class="text-white-50 mb-1">~ Login dengan akun yang sudah dibuat (Form Login)</p>
+
+                    <p class="text-white-50 mb-1">~ Daftarkan data diri anda di form yang sudah di berikan (Menu Isi data Diri)</p>
+
+                    <p class="text-white-50 mb-1">~ Pastikan Anda mengisi form sesuai perintah di kolom form</p>
+
+                    <p class="text-white-50 mb-1">~ Edit jika data diri anda salah (Form Cek data diri, dan edit)</p>
+
+                    <p class="text-white-50 mb-1">~ Logout dari akun anda</p>
+
                     <br>
-                    <p class="text-white-50 mb-1">~ Usaha mikro adalah usaha produktif milik perorangan.</p>
 
-                    <p class="text-white-50 mb-1">~ Usaha kecil adalah usaha personal, tidak tergolong sebagai badan usaha.</p>
-
-                    <p class="text-white-50 mb-1">~ Usaha Menengah adalah usaha yang dikelola personal sebagai badan usaha.</p>
-
+                    <p class="text-white-50 mb-1">*Bisa mengisi beberapa data diri, seperti keluarga anda</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="page-section" id="Tentang">
-        <div class="container">
-            <h2 class="text-center mt-0">Jenis-Jenis UMKM</h2>
-            <hr class="divider my-4" />
-            <div class="row">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <i class="fas fa-4x fa-sign-language text-primary mb-4"></i>
-                        <h3 class="h4 mb-2">Usaha Mikro</h3>
-                        <p class="text-muted mb-0">Warung Makan, Tukang cukur, dan lain-lain</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <i class="fas fa-4x fa-store text-primary mb-4"></i>
-                        <h3 class="h4 mb-2">Usaha Kecil</h3>
-                        <p class="text-muted mb-0">Koperasi, Minimarket, dan lain-lain</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <i class="fas fa-4x fa-ship text-primary mb-4"></i>
-                        <h3 class="h4 mb-2">Usaha Menengah</h3>
-                        <p class="text-muted mb-0">Perdagangan eksport import, ekspedisi muatan kapal laut, dan lain-lain</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <div class="container-fluid p-0">
-        <div class="row no-gutters">
-            <div class="col-lg-4 col-sm-4 text-center">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/cukur.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/cukur.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-
-                        <div class="project-name">Tukang Cukur</div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/minimarket.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/minimarket.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-
-                        <div class="project-name">Koperasi</div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/eksport import.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/eksport import.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-
-                        <div class="project-name">Ekspedisi Muatan kapal laut</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container-fluid p-0">
-        <div class="row no-gutters">
-            <div class="col-lg-4 col-sm-4 text-center">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/warung makan.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/warung makan.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-
-                        <div class="project-name">Warung makan</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-sm-4 text-center">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/minimarket2.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/minimarket2.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-
-                        <div class="project-name">minimarket</div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-sm-4 text-center">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/muatan kapal laut.jpg">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/muatan kapal laut.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-
-                        <div class="project-name">Eksport Import</div>
-                    </div>
-                </a>
-            </div>
-
-
-        </div>
-    </div>
 
 
     <!-- Contact-->
@@ -192,7 +100,7 @@
                 <div class="col-lg-4 mr-auto text-center">
                     <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
 
-                    <a class="d-block" href="erwin.fr43@gmail.com">erwin.fr43@gmail.com</a>
+                    <a class="d-block">UMKM.BS@gmail.com</a>
                 </div>
             </div>
         </div>

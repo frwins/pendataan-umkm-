@@ -37,15 +37,6 @@
             <span>Cek Data diri</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - logout -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('/') ?>">
-            <i class="fas fa-fw fa-sign-out-alt"></i>
-            <span>Log out</span></a>
-    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

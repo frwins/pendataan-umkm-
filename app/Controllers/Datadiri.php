@@ -85,14 +85,14 @@ class Datadiri extends BaseController
             'KTP' => [
                 'rules' => 'required|is_unique[datadiri.KTP]',
                 'errors' => [
-                    'required' => '{field} anda harus diisi',
+                    'required' => '{field} harus diisi',
                     'is_unique' => '{field} sudah terdaftar'
                 ]
             ],
             'nama' => [
                 'rules' => 'required|string',
                 'errors' => [
-                    'required' => '{field} anda harus diisi',
+                    'required' => '{field} harus diisi',
                     'string' => '{field} harus diisi dengan huruf'
                 ]
             ],
@@ -100,27 +100,27 @@ class Datadiri extends BaseController
             'alamat' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} anda harus diisi'
+                    'required' => '{field} harus diisi'
                 ]
             ],
             'pekerjaan' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} anda harus diisi'
+                    'required' => '{field} / penjualan harus diisi'
                 ]
             ],
 
             'pendapatan' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} anda harus diisi'
+                    'required' => '{field} harus diisi'
                 ]
             ],
 
             'telpon' => [
                 'rules' => 'required|numeric',
                 'errors' => [
-                    'required' => '{field} anda harus diisi',
+                    'required' => '{field} harus diisi',
                     'numeric' => '{field} harus diisi dengan angka'
                 ]
             ],

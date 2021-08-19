@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="alamat" class="col-sm-2 col-form-label">alamat</label>
+                    <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>" placeholder="Masukan Alamat">
                         <div class="invalid-feedback">
@@ -41,16 +41,16 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="pekerjaan" class="col-sm-2 col-form-label">pekerjaan</label>
+                    <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan / Jual Produk</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id=" pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>" placeholder="Masukan Nama Pekerjaan">
+                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id=" pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>" placeholder="Masukan Nama Pekerjaan / penjualan">
                         <div class=" invalid-feedback">
                             <?= $validation->getError('pekerjaan'); ?>
                         </div>
                     </div>
                 </div>
                 <fieldset class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">pendapatan</legend>
+                    <legend class="col-form-label col-sm-2 pt-0">Pendapatan</legend>
                     <div class="col-sm-10">
                         <div class="form-check <?= ($validation->hasError('pendapatan')) ? 'is-invalid' : ''; ?>" id="pendapatan" name="pendapatan" value="<?= old('pendapatan'); ?>">
                             <input class="form-check-input" type="radio" name="pendapatan" id="pendapatan" value="< Rp1.000.000">
@@ -86,7 +86,7 @@
                             <label class="form-check-label" for="pendapatan6">
                                 > Rp3.000.000
                             </label>
-                            <div class="invalid-feedback">Isi pendapatan dulu</div>
+                            <div class="invalid-feedback">Isi Pendapatan Dulu</div>
                         </div>
                         <div class=" invalid-feedback">
                             <?= $validation->getError('pendapatan'); ?>
@@ -95,7 +95,7 @@
         </div>
     </div>
     <div class="row mb-3">
-        <label for="telpon" class="col-sm-2 col-form-label">telpon</label>
+        <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
         <div class="col-sm-10">
             <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
             <div class=" invalid-feedback">

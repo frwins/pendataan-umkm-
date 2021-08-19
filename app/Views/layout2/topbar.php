@@ -12,13 +12,13 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img class="img-profile rounded-circle" src="<?= base_url(); ?>/img/undraw_profile.svg">
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+            <ul class="navbar-nav px-1">
+                <a class="nav-link " href="<?= base_url('/') ?>">Keluar</a>
 
-            </a>
-            <!-- Dropdown - User Information -->
+            </ul>
+        </nav>
+        <!-- Dropdown - User Information -->
 
 
 
