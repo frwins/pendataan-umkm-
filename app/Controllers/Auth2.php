@@ -14,6 +14,15 @@ class Auth2 extends BaseController
 
     public function index()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] == '2')
+            {
+                return redirect()->to(base_url('/datadiri2/dashboard'));
+            }
+        }
+
         $data = [
             'tittle' => 'Login'
 
@@ -106,6 +115,7 @@ class Auth2 extends BaseController
                 session()->set('log', true);
                 session()->set('username', $cek['username']);
                 session()->set('id', $cek['id']);
+                session()->set('level', $cek['level']);
 
                 return redirect()->to(base_url('datadiri2/dashboard'));
             } else {
