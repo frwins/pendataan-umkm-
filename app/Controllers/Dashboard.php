@@ -9,7 +9,7 @@ class Dashboard extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'])
             {
                 return redirect()->to(base_url('/'));
             }

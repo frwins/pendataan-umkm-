@@ -23,7 +23,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -52,7 +52,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -80,7 +80,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -101,7 +101,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -128,7 +128,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -208,7 +208,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -227,7 +227,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -253,7 +253,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -333,7 +333,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -412,7 +412,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
@@ -431,7 +431,7 @@ class Datadiri extends BaseController
         // proteksi login pengguna
         if (BaseController::statusLogin()['statusLogin'])
         {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
             {
                 return redirect()->to(base_url('/'));
             }
