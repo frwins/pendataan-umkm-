@@ -12,9 +12,14 @@
         <div class="topbar-divider d-none d-sm-block"></div>
 
         <!-- Nav Item - User Information -->
-        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <nav class="navbar navbar-white sticky-top bg-white flex-md-nowrap p-0">
             <ul class="navbar-nav px-1">
-                <a class="nav-link " href="<?= base_url('/') ?>">Keluar</a>
+                <?php echo form_open('auth2/logout') ?>
+                <form>
+                
+                <button type="submit" class="btn btn-sm btn-warning">keluar</button>
+                </form>
+                <?php echo form_close() ?>
 
             </ul>
         </nav>

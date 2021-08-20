@@ -57,4 +57,18 @@ class BaseController extends Controller
 		session();
 		$this->nama = 'erwin';
 	}
+
+	public function statusLogin()
+	{
+		$session = \Config\Services::session();
+		
+		$data = [
+			'statusLogin' => $session->get('log'),
+			'levelLogin' => $session->get('level')
+		];
+		
+		return $data;
+	}
+
+	
 }

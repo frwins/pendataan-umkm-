@@ -13,12 +13,24 @@ class Datadiri extends BaseController
 
     public function __construct()
     {
+        helper('form');
         $this->DatadiriModel = new DatadiriModel();
         $this->DatadiriModel2 = new DatadiriModel2();
     }
 
     public function aksi()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
 
         $datadiri = $this->DatadiriModel->findAll();
         $datadiri2 = $this->DatadiriModel2->findAll();
@@ -37,6 +49,17 @@ class Datadiri extends BaseController
 
     public function tambah()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
 
         $datadiri = $this->DatadiriModel->findAll();
 
@@ -54,6 +77,18 @@ class Datadiri extends BaseController
 
     public function create()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
         $data = [
             'title' => 'Form Tambah Data'
 
@@ -63,6 +98,18 @@ class Datadiri extends BaseController
 
     public function dashboard()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
         $datadiri = $this->DatadiriModel->findAll();
 
         $data = [
@@ -78,6 +125,18 @@ class Datadiri extends BaseController
 
     public function save()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
         $session = session();
         $id_user = $session->get('id');
         // validasi input
@@ -146,6 +205,18 @@ class Datadiri extends BaseController
 
     public function delete($id)
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
         $this->DatadiriModel->delete($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('datadiri/aksi');
@@ -153,6 +224,17 @@ class Datadiri extends BaseController
 
     public function edit($id)
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
 
 
         $data = [
@@ -168,6 +250,17 @@ class Datadiri extends BaseController
 
     public function update($id)
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
 
 
         if (!$this->validate([
@@ -237,6 +330,17 @@ class Datadiri extends BaseController
 
     public function update2($id)
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
 
 
         if (!$this->validate([
@@ -305,6 +409,18 @@ class Datadiri extends BaseController
 
     public function delete2($id_user)
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
         $this->DatadiriModel2->delete($id_user);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('datadiri/aksi');
@@ -312,6 +428,18 @@ class Datadiri extends BaseController
 
     public function excel()
     {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
         $data = [
             'datadiri' => $this->DatadiriModel->getdatadiri(),
             'datadiri2' => $this->DatadiriModel2->getdatadiri2()

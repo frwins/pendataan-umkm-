@@ -122,10 +122,11 @@ class Auth2 extends BaseController
     public function logout()
     {
         session()->remove('log');
+        session()->set('log', false);
         session()->remove('username');
         session()->remove('email');
         session()->remove('level');
         session()->setFlashdata('pesan', 'Berhasil Logout');
-        return redirect()->to(base_url('/index'));
+        return redirect()->to(base_url('/auth2/login'));
     }
 }
