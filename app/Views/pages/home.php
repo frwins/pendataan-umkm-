@@ -131,6 +131,3 @@
 
 </html>
 
-<?php
-dd($_SESSION);
-?>

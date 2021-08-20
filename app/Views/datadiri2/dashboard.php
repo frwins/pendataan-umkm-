@@ -51,6 +51,4 @@
 
 <?= $this->endSection('page-content'); ?>
 
-<?php
-// dd($levelLogin);
-?>
+
