@@ -1,6 +1,7 @@
 <?= $this->extend('layout/index'); ?>
 <?= $this->section('page-content'); ?>
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -33,7 +34,7 @@
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                         Jumlah Pendaftar</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=  count($datadiri2)?></div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=  count($datadiri3)?></div>
                 </div>
                 <div class="col-auto">
                     <i class="fas fa-users fa-2x text-gray-300"></i>

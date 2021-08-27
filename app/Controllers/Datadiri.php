@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use \App\Models\DatadiriModel;
 use \App\Models\DatadiriModel2;
+use \App\Models\UsersModel;
 
 
 
@@ -16,6 +17,7 @@ class Datadiri extends BaseController
         helper('form');
         $this->DatadiriModel = new DatadiriModel();
         $this->DatadiriModel2 = new DatadiriModel2();
+        $this->UsersModel = new UsersModel();
     }
 
     public function aksi()
@@ -112,11 +114,13 @@ class Datadiri extends BaseController
 
         $datadiri = $this->DatadiriModel->findAll();
         $datadiri2 = $this->DatadiriModel2->findAll();
+        $datadiri3 = $this->UsersModel->findAll();
 
         $data = [
             'tittle' => 'Data diri',
             'datadiri' => $datadiri,
             'datadiri2' => $datadiri2,
+            'datadiri3' => $datadiri3,
             'validation' => \Config\Services::validation()
         ];
 
