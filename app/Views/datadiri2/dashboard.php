@@ -5,6 +5,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <div class="container">
+<div class="row">
+<div class="col-xl-12 col-md-12 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        Jumlah Pendaftar</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?=  count($datadiri2)?></div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-users fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
     <div class="d-flex align-items-center p-3 my-3 text-black bg-purple rounded shadow-sm">
         <div class="lh-1">
             <h1 class="h6 mb-0 text-black lh-1">Selamat Datang</h1>
@@ -14,6 +32,7 @@
 </div>
 
 <div class="container">
+    
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <h6 class="border-bottom pb-2 mb-0 ">Info Penting</h6>
         <div class="d-flex text-muted pt-3">

@@ -111,10 +111,12 @@ class Datadiri extends BaseController
         }
 
         $datadiri = $this->DatadiriModel->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
 
         $data = [
             'tittle' => 'Data diri',
             'datadiri' => $datadiri,
+            'datadiri2' => $datadiri2,
             'validation' => \Config\Services::validation()
         ];
 
