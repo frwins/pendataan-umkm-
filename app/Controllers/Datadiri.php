@@ -145,6 +145,7 @@ class Datadiri extends BaseController
 
         $session = session();
         $id_user = $session->get('id');
+        
         // validasi input
         if (!$this->validate([
             'KTP' => [
@@ -193,6 +194,8 @@ class Datadiri extends BaseController
             $validation = \Config\Services::validation();
             return redirect()->to('datadiri/tambah')->withInput()->with('validation', $validation);
         }
+
+        
 
         $this->DatadiriModel->save([
             'id_user' => $id_user,

@@ -116,6 +116,7 @@ class Auth extends BaseController
                 session()->set('username', $cek['username']);
                 session()->set('email', $cek['email']);
                 session()->set('level', $cek['level']);
+                session()->set('id', $cek['id']);
                 return redirect()->to(base_url('datadiri/dashboard'));
             } else {
                 session()->setFlashdata('pesan', 'Login gagal! Masukan data lagi dengan benar');
