@@ -78,12 +78,15 @@ class Auth2 extends BaseController
 
             ];
 
-            $usersModel = new \App\Models\usersModel();
-            $query = $usersModel->insert($values);
+            // $usersModel = new \App\Models\usersModel();
+            // $query = $usersModel->insert($values);
+            
+            $NotifikasiModel = new \App\Models\NotifikasiModel();
+            $query = $NotifikasiModel->insert($values);
             if (!$query) {
                 return redirect()->back()->with('fail', 'Register gagal');
             } else {
-                return redirect()->to('auth2/register')->with('success', 'Register sukses, silahkan login');
+                return redirect()->to('auth2/register')->with('success', 'Anda telah berhasil registrasi, akun Anda bisa digunakan setelah disetujui oleh Admin. Mohon tunggu selama 1X24 Jam.');
             }
         }
     }

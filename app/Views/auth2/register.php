@@ -53,14 +53,14 @@
                                         <div class="form-group">
                                             <label for="">Password</label>
                                             <div class="form-group">
-                                                <input type="text" name="password" class="form-control" placeholder="Masukan Password" value="<?= set_value('password'); ?>">
+                                                <input type="password" name="password" class="form-control" placeholder="Masukan Password" value="<?= set_value('password'); ?>">
                                                 <span class="text-danger"><?= isset($validation) ?  display_error($validation, 'password') : '' ?></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Konfimasi Password</label>
                                             <div class="form-group">
-                                                <input type="text" name="cpassword" class="form-control" placeholder="Masukan Ulang Password" value="<?= set_value('cpassword'); ?>">
+                                                <input type="password" name="cpassword" class="form-control" placeholder="Masukan Ulang Password" value="<?= set_value('cpassword'); ?>">
                                                 <span class="text-danger"><?= isset($validation) ?  display_error($validation, 'cpassword') : '' ?></span>
                                             </div>
                                         </div>

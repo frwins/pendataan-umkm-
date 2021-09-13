@@ -37,6 +37,12 @@
             <span>Cek Data diri</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('/datadiri/notifikasi') ?>">
+            <i class="fas fa-fw fa-bell"></i>
+            <span>Notifikasi</span></a>
+    </li>
+
 
     <!-- Nav Item - logout -->
 

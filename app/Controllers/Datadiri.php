@@ -5,6 +5,7 @@ namespace App\Controllers;
 use \App\Models\DatadiriModel;
 use \App\Models\DatadiriModel2;
 use \App\Models\UsersModel;
+use \App\Models\NotifikasiModel;
 
 
 
@@ -18,6 +19,7 @@ class Datadiri extends BaseController
         $this->DatadiriModel = new DatadiriModel();
         $this->DatadiriModel2 = new DatadiriModel2();
         $this->UsersModel = new UsersModel();
+        $this->NotifikasiModel = new NotifikasiModel();
     }
 
     public function aksi()
@@ -455,5 +457,86 @@ class Datadiri extends BaseController
         ];
 
         echo  view('datadiri/excel', $data);
+    }
+
+    public function notifikasi()
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+        $notifikasi = $this->NotifikasiModel->findAll();
+
+
+        $data = [
+            'title' => 'Notifikasi',
+            'notifikasi' => $notifikasi,
+        ];
+
+        return view('datadiri/notifikasi', $data);
+    }
+
+    public function konfirmasi ($id)
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+        $dataNotifikasi = $this->NotifikasiModel->getNotifikasi($id);
+
+        // dd($dataNotifikasi);
+
+        $username = $dataNotifikasi['username'];
+        $password = $dataNotifikasi['password'];
+
+        $values = [
+            'username' => $username,
+            'password' => $password,
+
+        ];
+
+        $usersModel = new \App\Models\usersModel();
+        $usersModel->insert($values);
+
+        $this->NotifikasiModel->delete($id);
+        session()->setFlashdata('pesan', 'Akun berhasil dikonfirmasi');
+        return redirect()->to('datadiri/notifikasi');
+    }
+
+    public function hapusNotifikasi ($id)
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+        
+
+        $this->NotifikasiModel->delete($id);
+        session()->setFlashdata('pesan', 'Notifikasi berhasil dihapus');
+        return redirect()->to('datadiri/notifikasi');
     }
 }

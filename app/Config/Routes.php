@@ -40,6 +40,10 @@ $routes->get('datadiri/edit2/(:any)', 'Datadiri::edit2/$1');
 $routes->get('datadiri2/edit/(:any)', 'Datadiri2::edit/$1');
 
 $routes->get('datadiri/excel', 'datadiri::excel');
+$routes->get('datadiri/notifikasi', 'datadiri::notifikasi');
+
+$routes->get('datadiri/notifikasi/konfirmasi/(:any)', 'datadiri::konfirmasi/$1');
+$routes->get('datadiri/notifikasi/hapus/(:any)', 'datadiri::hapusNotifikasi/$1');
 
 $routes->get('datadiri2/aksi/(:any)', 'Datadiri2::kirim/$1');
 
