@@ -539,4 +539,56 @@ class Datadiri extends BaseController
         session()->setFlashdata('pesan', 'Notifikasi berhasil dihapus');
         return redirect()->to('datadiri/notifikasi');
     }
+
+    public function akunPengguna()
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+        $dataAkun = $this->UsersModel->findAll();
+
+
+        $data = [
+            'title' => 'Daftar Akun Pengguna',
+            'dataAkun' => $dataAkun,
+        ];
+
+        return view('datadiri/akun-pengguna', $data);
+    }
+
+    public function resetPassword($id)
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '1')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+
+
+        $this->UsersModel->save([
+            'id' => $id,
+            'password' => 'password123'
+        ]);
+
+
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
+
+        return redirect()->to('datadiri/akun-pengguna');
+    }
 }

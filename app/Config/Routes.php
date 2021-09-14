@@ -42,6 +42,9 @@ $routes->get('datadiri2/edit/(:any)', 'Datadiri2::edit/$1');
 $routes->get('datadiri/excel', 'datadiri::excel');
 $routes->get('datadiri/notifikasi', 'datadiri::notifikasi');
 
+$routes->get('datadiri/akun-pengguna', 'datadiri::akunPengguna');
+$routes->get('datadiri/akun-pengguna/reset-password/(:any)', 'datadiri::resetPassword/$1');
+
 $routes->get('datadiri/notifikasi/konfirmasi/(:any)', 'datadiri::konfirmasi/$1');
 $routes->get('datadiri/notifikasi/hapus/(:any)', 'datadiri::hapusNotifikasi/$1');
 
