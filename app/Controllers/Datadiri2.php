@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use \App\Models\datadirimodel2;
 use \App\Models\UsersModel;
+use \App\Models\Model_auth2;
 
 
 class Datadiri2 extends BaseController
@@ -16,6 +17,7 @@ class Datadiri2 extends BaseController
         helper('form');
         $this->DatadiriModel2 = new datadirimodel2();
         $this->UsersModel = new UsersModel();
+        $this->Model_auth2 = new Model_auth2();
     }
 
     public function aksi()
@@ -326,5 +328,90 @@ class Datadiri2 extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil diubah');
 
         return redirect()->to('datadiri2/aksi');
+    }
+
+    public function akunPengguna()
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+        $dataAkun = $this->UsersModel->findAll();
+
+
+        $data = [
+            'title' => 'Daftar Akun Pengguna',
+            'dataAkun' => $dataAkun,
+            'validation' => \Config\Services::validation(),
+        ];
+
+        return view('datadiri/akun-pengguna', $data);
+    }
+
+    public function gantiPassword()
+    {
+        // proteksi login pengguna
+        if (BaseController::statusLogin()['statusLogin'])
+        {
+            if (BaseController::statusLogin()['levelLogin'] !== '2')
+            {
+                return redirect()->to(base_url('/'));
+            }
+        }else
+        {
+            return redirect()->to(base_url('/'));
+        }
+
+        $session = session();
+        $id_user = $session->get('id');
+        $dataAkun = $this->Model_auth2->getAkun($id_user);
+        $password = $dataAkun['password'];
+        // dd($password);
+
+        if (!$this->validate([
+            'password_lama' => [
+                'rules' => 'required|in_list['. $password.']',
+                'errors' => [
+                    'required' => 'Password lama harus diisi',
+                    'in_list' => 'Password salah'
+                    
+                ]
+            ],
+            'password_baru' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Password baru harus diisi',
+                ]
+            ],
+            'password_konfirmasi' => [
+                'rules' => 'required|matches[password_baru]',
+                'errors' => [
+                    'required' => 'Password konfirmasi harus diisi',
+                    'matches' => 'Password konfirmasi tidak sesuai',
+                ]
+            ],
+        ])) {
+            $validation = \Config\Services::validation();
+            return redirect()->to('datadiri2/akun-pengguna' . $this->request->getVar('id'))->withInput()->with('validation', $validation);
+        }
+
+        
+        
+        $this->Model_auth2->save([
+            'id' => $id_user,
+            'password' => $this->request->getVar('password_baru'),
+        ]);
+
+        session()->setFlashdata('pesan', 'Password berhasil diubah');
+
+        return redirect()->to('datadiri2/akun-pengguna');
     }
 }

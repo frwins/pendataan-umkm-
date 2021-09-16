@@ -37,6 +37,12 @@
             <span>Cek Data diri</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('/datadiri2/akun-pengguna') ?>">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Akun Pengguna</span></a>
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
