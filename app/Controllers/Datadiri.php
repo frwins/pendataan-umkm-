@@ -626,4 +626,134 @@ class Datadiri extends BaseController
 
         return redirect()->to('datadiri/akun-pengguna');
     }
+
+    public function dataPendapatan()
+    {
+        $datadiri = $this->DatadiriModel->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
+        $gabungan = (object) array_merge((array) $datadiri, (array)$datadiri2);
+        $arrayGabungan = (array) $gabungan;
+        // dd($gabungan);
+        // $jPendapatan2 = $this->DatadiriModel2->getDataByPendapatan('Rp2.000.000-Rp2.500.000');
+
+        $data1 = [];
+        
+        $data2 = [];
+        foreach ($gabungan as $data)
+        {
+            $data1[] = $data['pendapatan'];
+        }
+        
+        sort($data1);
+        $data1 = array_unique($data1);
+        $data1 = array_values($data1);
+        
+
+        foreach ($data1 as $data)
+        {
+            // $data2[] = count($this->DatadiriModel2->getDataByPendapatan($data));
+
+        }
+
+        // dd($data1[0]);
+        // dd($arrayGabungan[0]['pendapatan']);
+        for ($i = 0; $i < count ($data1); $i++)
+        {
+            $tampung = 0;
+            for ($j = 0; $j < count($arrayGabungan); $j++)
+            {
+                // dd($arrayGabungan[$j]['pendapatan'] == $data1[$j]);
+                if ($arrayGabungan[$j]['pendapatan'] == $data1[$i])
+                {
+                    // echo $arrayGabungan[$j]['pendapatan'] ."<br>";
+                    $tampung++;
+                }
+            }
+            $data2[] = $tampung;
+        }
+        $dataJSON = [ $data1, 
+        $data2
+        ];
+        
+        // for ($i =0; $i < count($data1); $i++)
+        // {
+
+        //     // $dataJSON[] = array_combine([$data1[$i]], [$data2[$i]]);
+        //     $dataJSON[] = array_combine([$data1[$i]], [$data2[$i]]);
+
+        // }
+
+        
+
+        echo json_encode($dataJSON);
+        // echo json_encode(array_combine($data1, $data2));
+        // echo($data1);
+        // dd($jPendapatan2);
+        
+    }
+
+    public function dataPekerjaan()
+    {
+        $datadiri = $this->DatadiriModel->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
+        $gabungan = (object) array_merge((array) $datadiri, (array)$datadiri2);
+        $arrayGabungan = (array) $gabungan;
+        // dd($gabungan);
+        // $jPendapatan2 = $this->DatadiriModel2->getDataByPendapatan('Rp2.000.000-Rp2.500.000');
+
+        $data1 = [];
+        
+        $data2 = [];
+        foreach ($gabungan as $data)
+        {
+            $data1[] = $data['pekerjaan'];
+        }
+        
+        sort($data1);
+        $data1 = array_unique($data1);
+        $data1 = array_values($data1);
+        
+
+        foreach ($data1 as $data)
+        {
+            // $data2[] = count($this->DatadiriModel2->getDataByPendapatan($data));
+
+        }
+
+        // dd($data1[0]);
+        // dd($arrayGabungan[0]['pendapatan']);
+        for ($i = 0; $i < count ($data1); $i++)
+        {
+            $tampung = 0;
+            for ($j = 0; $j < count($arrayGabungan); $j++)
+            {
+                // dd($arrayGabungan[$j]['pendapatan'] == $data1[$j]);
+                if ($arrayGabungan[$j]['pekerjaan'] == $data1[$i])
+                {
+                    // echo $arrayGabungan[$j]['pendapatan'] ."<br>";
+                    $tampung++;
+                }
+            }
+            $data2[] = $tampung;
+        }
+        $dataJSON = [ $data1, 
+        $data2
+        ];
+        
+        // for ($i =0; $i < count($data1); $i++)
+        // {
+
+        //     // $dataJSON[] = array_combine([$data1[$i]], [$data2[$i]]);
+        //     $dataJSON[] = array_combine([$data1[$i]], [$data2[$i]]);
+
+        // }
+
+        
+
+        echo json_encode($dataJSON);
+        // echo json_encode(array_combine($data1, $data2));
+        // echo($data1);
+        // dd($jPendapatan2);
+        
+    }
 }

@@ -26,4 +26,14 @@ class DatadiriModel2 extends Model
         
         return $query;
     }
+
+    public function getDataByPendapatan($pendapatan)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('datadiri2');
+        $builder->where('pendapatan', $pendapatan);
+        $query   = $builder->get(); 
+        
+        return $query->getResultArray();
+    }
 }
