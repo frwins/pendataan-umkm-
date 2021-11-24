@@ -1,4 +1,4 @@
-<?= $this->extend('layout/index'); ?>
+<?= $this->extend('layout2/index'); ?>
 <?= $this->section('page-content'); ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
@@ -44,7 +44,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 </fieldset>
                 <button type="submit" class="btn btn-primary">Ubah</a>

@@ -1,6 +1,10 @@
 <?= $this->extend('layout/index'); ?>
 <?= $this->section('page-content'); ?>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+
 <div class="container">
     <div class="row">
         <div class="col">
@@ -92,21 +96,20 @@
                             <?= $validation->getError('pendapatan'); ?>
                         </div>
                     </div>
+
+                    <div class="row mb-3">
+                        <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
+                            <div class=" invalid-feedback">
+                                <?= $validation->getError('telpon'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Tambah Data Diri</a>
+            </form>
         </div>
     </div>
-    <div class="row mb-3">
-        <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
-            <div class=" invalid-feedback">
-                <?= $validation->getError('telpon'); ?>
-            </div>
-        </div>
-    </div>
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Tambah Data Diri</a>
-        </form>
-</div>
-</div>
 </div>
 <?= $this->endSection('page-content'); ?>

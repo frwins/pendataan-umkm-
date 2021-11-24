@@ -73,7 +73,6 @@
                                         <div class="text-center">
                                             <a class="small" href="<?= site_url('auth2/login') ?>">Kembali</a>
                                         </div>
-                                        <a> Harap ingat kata sandi anda, Kata sandi tidak bisa diubah !!!! </a>
                                 </div>
                             </div>
                         </div>

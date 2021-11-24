@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-use \App\Models\datadirimodel2;
+use \App\Models\DatadiriModel;
+use \App\Models\DatadiriModel2;
 use \App\Models\UsersModel;
 use \App\Models\Model_auth2;
 
@@ -15,6 +16,7 @@ class Datadiri2 extends BaseController
     public function __construct()
     {
         helper('form');
+        $this->DatadiriModel = new DatadiriModel();
         $this->DatadiriModel2 = new datadirimodel2();
         $this->UsersModel = new UsersModel();
         $this->Model_auth2 = new Model_auth2();
@@ -23,14 +25,11 @@ class Datadiri2 extends BaseController
     public function aksi()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -53,18 +52,15 @@ class Datadiri2 extends BaseController
     public function tambah()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
-        
+
         $datadiri2 = $this->DatadiriModel2->findAll();
 
 
@@ -82,17 +78,14 @@ class Datadiri2 extends BaseController
     public function create()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
-        
+
         $data = [
             'title' => 'Form Tambah Data'
 
@@ -103,24 +96,23 @@ class Datadiri2 extends BaseController
     public function dashboard()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
+        $datadiri = $this->DatadiriModel->findAll();
         $datadiri2 = $this->DatadiriModel2->findAll();
-
-
+        $datadiri3 = $this->UsersModel->findAll();
 
         $data = [
             'tittle' => 'Data diri',
+            'datadiri' => $datadiri,
             'datadiri2' => $datadiri2,
+            'datadiri3' => $datadiri3,
             'validation' => \Config\Services::validation(),
             'levelLogin' => BaseController::statusLogin()['levelLogin']
         ];
@@ -133,14 +125,11 @@ class Datadiri2 extends BaseController
     public function save()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -215,14 +204,11 @@ class Datadiri2 extends BaseController
     public function delete($id_user)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -234,14 +220,11 @@ class Datadiri2 extends BaseController
     public function edit($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -256,14 +239,11 @@ class Datadiri2 extends BaseController
     public function update($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -333,14 +313,11 @@ class Datadiri2 extends BaseController
     public function akunPengguna()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -353,20 +330,17 @@ class Datadiri2 extends BaseController
             'validation' => \Config\Services::validation(),
         ];
 
-        return view('datadiri/akun-pengguna', $data);
+        return view('datadiri2/akun-pengguna', $data);
     }
 
     public function gantiPassword()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '2') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -378,11 +352,11 @@ class Datadiri2 extends BaseController
 
         if (!$this->validate([
             'password_lama' => [
-                'rules' => 'required|in_list['. $password.']',
+                'rules' => 'required|in_list[' . $password . ']',
                 'errors' => [
                     'required' => 'Password lama harus diisi',
                     'in_list' => 'Password salah'
-                    
+
                 ]
             ],
             'password_baru' => [
@@ -403,8 +377,8 @@ class Datadiri2 extends BaseController
             return redirect()->to('datadiri2/akun-pengguna' . $this->request->getVar('id'))->withInput()->with('validation', $validation);
         }
 
-        
-        
+
+
         $this->Model_auth2->save([
             'id' => $id_user,
             'password' => $this->request->getVar('password_baru'),
