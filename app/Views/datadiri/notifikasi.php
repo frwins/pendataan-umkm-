@@ -36,7 +36,7 @@
                         <tr>
                             <td><?= $nomor++ ?></td>
                             <td><?= $d['username'] ?></td>
-                            <td><?= $d['gambar'] ?></td>
+                            <td style="width: 30%;"><img src="/img/<?= $d['gambar']; ?>" class="img-thumbnail" alt="..." </td>
                             <td>
                                 <a href="notifikasi/konfirmasi/<?= $d['id_notifikasi'] ?>" class="btn btn-success">Konfirmasi</a>
                                 <a href="notifikasi/hapus/<?= $d['id_notifikasi'] ?>" class="btn btn-danger">Delete</a>

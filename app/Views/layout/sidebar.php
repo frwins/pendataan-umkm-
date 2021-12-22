@@ -46,7 +46,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= site_url('/datadiri/akun-pengguna') ?>">
             <i class="fas fa-fw fa-users"></i>
-            <span>Akun Pengguna</span></a>
+            <span>Ganti Password</span></a>
     </li>
 
 
