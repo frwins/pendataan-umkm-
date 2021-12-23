@@ -15,10 +15,8 @@ class Auth2 extends BaseController
     public function index()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] == '2')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] == '2') {
                 return redirect()->to(base_url('/datadiri2/dashboard'));
             }
         }
@@ -47,6 +45,16 @@ class Auth2 extends BaseController
                     'numeric' => 'Harus diisi dengan angka'
                 ]
             ],
+
+            'gambar' => [
+                'rules' => 'uploaded[gambar]|is_image[gambar]',
+                'errors' => [
+                    'uploaded' => 'Foto KTP tidak boleh kosong',
+                    'is_image' => 'Harus diisi dengan format gambar'
+                ]
+            ],
+
+
             'password' => [
                 'rules' => 'required|min_length[5]|max_length[12]',
                 'errors' => [
@@ -70,23 +78,32 @@ class Auth2 extends BaseController
             return view('auth2/register', ['validation' => $this->validator]);
         } else {
             $username = $this->request->getPost('username');
+            $gambar = $this->request->getFile('gambar');
             $password = $this->request->getPost('password');
+            $namagambar = $gambar->getName();
+            $gambar->move('img');
 
             $values = [
                 'username' => $username,
-                'password' => $password,
+                'gambar' => $namagambar,
+                'password' => $password
 
             ];
 
+
+
+
+
+
             // $usersModel = new \App\Models\usersModel();
             // $query = $usersModel->insert($values);
-            
+
             $NotifikasiModel = new \App\Models\NotifikasiModel();
             $query = $NotifikasiModel->insert($values);
             if (!$query) {
                 return redirect()->back()->with('fail', 'Register gagal');
             } else {
-                return redirect()->to('auth2/register')->with('success', 'Anda telah berhasil registrasi, akun Anda bisa digunakan setelah disetujui oleh Admin. Mohon tunggu selama 1X24 Jam.');
+                return redirect()->to('auth2/register')->with('success', 'Anda telah berhasil registrasi, akun Anda bisa digunakan setelah disetujui oleh Admin. Mohon tunggu.');
             }
         }
     }

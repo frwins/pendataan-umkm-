@@ -24,6 +24,7 @@
                     <tr>
                         <th scope="col" style="width: 10%;">no</th>
                         <th scope="col">No.KTP</th>
+                        <th scope="col">KTP
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -35,6 +36,7 @@
                         <tr>
                             <td><?= $nomor++ ?></td>
                             <td><?= $d['username'] ?></td>
+                            <td style="width: 30%;"><img src="/img/<?= $d['gambar']; ?>" class="img-thumbnail" alt="..." </td>
                             <td>
                                 <a href="notifikasi/konfirmasi/<?= $d['id_notifikasi'] ?>" class="btn btn-success">Konfirmasi</a>
                                 <a href="notifikasi/hapus/<?= $d['id_notifikasi'] ?>" class="btn btn-danger">Delete</a>
@@ -43,6 +45,7 @@
                         </tr>
 
                 </tbody>
+
             </table>
         </div>
     </div>

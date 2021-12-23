@@ -27,14 +27,11 @@ class Datadiri extends BaseController
     public function aksi()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -56,14 +53,11 @@ class Datadiri extends BaseController
     public function tambah()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -84,14 +78,11 @@ class Datadiri extends BaseController
     public function create()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -105,14 +96,11 @@ class Datadiri extends BaseController
     public function dashboard()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -136,20 +124,17 @@ class Datadiri extends BaseController
     public function save()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
         $session = session();
         $id_user = $session->get('id');
-        
+
         // validasi input
         if (!$this->validate([
             'KTP' => [
@@ -199,7 +184,7 @@ class Datadiri extends BaseController
             return redirect()->to('datadiri/tambah')->withInput()->with('validation', $validation);
         }
 
-        
+
 
         $this->DatadiriModel->save([
             'id_user' => $id_user,
@@ -219,14 +204,11 @@ class Datadiri extends BaseController
     public function delete($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -238,14 +220,11 @@ class Datadiri extends BaseController
     public function edit($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -264,14 +243,11 @@ class Datadiri extends BaseController
     public function update($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -344,14 +320,11 @@ class Datadiri extends BaseController
     public function update2($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -423,14 +396,11 @@ class Datadiri extends BaseController
     public function delete2($id_user)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -442,14 +412,11 @@ class Datadiri extends BaseController
     public function excel()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -464,14 +431,11 @@ class Datadiri extends BaseController
     public function notifikasi()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -486,17 +450,14 @@ class Datadiri extends BaseController
         return view('datadiri/notifikasi', $data);
     }
 
-    public function konfirmasi ($id)
+    public function konfirmasi($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -521,21 +482,18 @@ class Datadiri extends BaseController
         return redirect()->to('datadiri/notifikasi');
     }
 
-    public function hapusNotifikasi ($id)
+    public function hapusNotifikasi($id)
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
-        
+
 
         $this->NotifikasiModel->delete($id);
         session()->setFlashdata('pesan', 'Notifikasi berhasil dihapus');
@@ -545,14 +503,11 @@ class Datadiri extends BaseController
     public function akunPengguna()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -571,14 +526,11 @@ class Datadiri extends BaseController
     public function gantiPassword()
     {
         // proteksi login pengguna
-        if (BaseController::statusLogin()['statusLogin'])
-        {
-            if (BaseController::statusLogin()['levelLogin'] !== '1')
-            {
+        if (BaseController::statusLogin()['statusLogin']) {
+            if (BaseController::statusLogin()['levelLogin'] !== '1') {
                 return redirect()->to(base_url('/'));
             }
-        }else
-        {
+        } else {
             return redirect()->to(base_url('/'));
         }
 
@@ -590,11 +542,11 @@ class Datadiri extends BaseController
 
         if (!$this->validate([
             'password_lama' => [
-                'rules' => 'required|in_list['. $password.']',
+                'rules' => 'required|in_list[' . $password . ']',
                 'errors' => [
                     'required' => 'Password lama harus diisi',
                     'in_list' => 'Password salah'
-                    
+
                 ]
             ],
             'password_baru' => [
@@ -615,8 +567,8 @@ class Datadiri extends BaseController
             return redirect()->to('datadiri/akun-pengguna' . $this->request->getVar('id'))->withInput()->with('validation', $validation);
         }
 
-        
-        
+
+
         $this->Model_auth->save([
             'id' => $id_user,
             'password' => $this->request->getVar('password_baru'),
@@ -637,44 +589,40 @@ class Datadiri extends BaseController
         // $jPendapatan2 = $this->DatadiriModel2->getDataByPendapatan('Rp2.000.000-Rp2.500.000');
 
         $data1 = [];
-        
+
         $data2 = [];
-        foreach ($gabungan as $data)
-        {
+        foreach ($gabungan as $data) {
             $data1[] = $data['pendapatan'];
         }
-        
+
         sort($data1);
         $data1 = array_unique($data1);
         $data1 = array_values($data1);
-        
 
-        foreach ($data1 as $data)
-        {
+
+        foreach ($data1 as $data) {
             // $data2[] = count($this->DatadiriModel2->getDataByPendapatan($data));
 
         }
 
         // dd($data1[0]);
         // dd($arrayGabungan[0]['pendapatan']);
-        for ($i = 0; $i < count ($data1); $i++)
-        {
+        for ($i = 0; $i < count($data1); $i++) {
             $tampung = 0;
-            for ($j = 0; $j < count($arrayGabungan); $j++)
-            {
+            for ($j = 0; $j < count($arrayGabungan); $j++) {
                 // dd($arrayGabungan[$j]['pendapatan'] == $data1[$j]);
-                if ($arrayGabungan[$j]['pendapatan'] == $data1[$i])
-                {
+                if ($arrayGabungan[$j]['pendapatan'] == $data1[$i]) {
                     // echo $arrayGabungan[$j]['pendapatan'] ."<br>";
                     $tampung++;
                 }
             }
             $data2[] = $tampung;
         }
-        $dataJSON = [ $data1, 
-        $data2
+        $dataJSON = [
+            $data1,
+            $data2
         ];
-        
+
         // for ($i =0; $i < count($data1); $i++)
         // {
 
@@ -683,14 +631,16 @@ class Datadiri extends BaseController
 
         // }
 
-        
+
 
         echo json_encode($dataJSON);
         // echo json_encode(array_combine($data1, $data2));
         // echo($data1);
         // dd($jPendapatan2);
-        
+
     }
+
+
 
     public function dataPekerjaan()
     {
@@ -702,44 +652,40 @@ class Datadiri extends BaseController
         // $jPendapatan2 = $this->DatadiriModel2->getDataByPendapatan('Rp2.000.000-Rp2.500.000');
 
         $data1 = [];
-        
+
         $data2 = [];
-        foreach ($gabungan as $data)
-        {
+        foreach ($gabungan as $data) {
             $data1[] = $data['pekerjaan'];
         }
-        
+
         sort($data1);
         $data1 = array_unique($data1);
         $data1 = array_values($data1);
-        
 
-        foreach ($data1 as $data)
-        {
+
+        foreach ($data1 as $data) {
             // $data2[] = count($this->DatadiriModel2->getDataByPendapatan($data));
 
         }
 
         // dd($data1[0]);
         // dd($arrayGabungan[0]['pendapatan']);
-        for ($i = 0; $i < count ($data1); $i++)
-        {
+        for ($i = 0; $i < count($data1); $i++) {
             $tampung = 0;
-            for ($j = 0; $j < count($arrayGabungan); $j++)
-            {
+            for ($j = 0; $j < count($arrayGabungan); $j++) {
                 // dd($arrayGabungan[$j]['pendapatan'] == $data1[$j]);
-                if ($arrayGabungan[$j]['pekerjaan'] == $data1[$i])
-                {
+                if ($arrayGabungan[$j]['pekerjaan'] == $data1[$i]) {
                     // echo $arrayGabungan[$j]['pendapatan'] ."<br>";
                     $tampung++;
                 }
             }
             $data2[] = $tampung;
         }
-        $dataJSON = [ $data1, 
-        $data2
+        $dataJSON = [
+            $data1,
+            $data2
         ];
-        
+
         // for ($i =0; $i < count($data1); $i++)
         // {
 
@@ -748,12 +694,75 @@ class Datadiri extends BaseController
 
         // }
 
-        
+
 
         echo json_encode($dataJSON);
         // echo json_encode(array_combine($data1, $data2));
         // echo($data1);
         // dd($jPendapatan2);
-        
+
+    }
+
+
+
+    public function dataAlamat()
+    {
+        $datadiri = $this->DatadiriModel->findAll();
+        $datadiri2 = $this->DatadiriModel2->findAll();
+        $gabungan = (object) array_merge((array) $datadiri, (array)$datadiri2);
+        $arrayGabungan = (array) $gabungan;
+        // dd($gabungan);
+        // $jPendapatan2 = $this->DatadiriModel2->getDataByPendapatan('Rp2.000.000-Rp2.500.000');
+
+        $data1 = [];
+
+        $data2 = [];
+        foreach ($gabungan as $data) {
+            $data1[] = $data['alamat'];
+        }
+
+        sort($data1);
+        $data1 = array_unique($data1);
+        $data1 = array_values($data1);
+
+
+        foreach ($data1 as $data) {
+            // $data2[] = count($this->DatadiriModel2->getDataByPendapatan($data));
+
+        }
+
+        // dd($data1[0]);
+        // dd($arrayGabungan[0]['pendapatan']);
+        for ($i = 0; $i < count($data1); $i++) {
+            $tampung = 0;
+            for ($j = 0; $j < count($arrayGabungan); $j++) {
+                // dd($arrayGabungan[$j]['pendapatan'] == $data1[$j]);
+                if ($arrayGabungan[$j]['alamat'] == $data1[$i]) {
+                    // echo $arrayGabungan[$j]['pendapatan'] ."<br>";
+                    $tampung++;
+                }
+            }
+            $data2[] = $tampung;
+        }
+        $dataJSON = [
+            $data1,
+            $data2
+        ];
+
+        // for ($i =0; $i < count($data1); $i++)
+        // {
+
+        //     // $dataJSON[] = array_combine([$data1[$i]], [$data2[$i]]);
+        //     $dataJSON[] = array_combine([$data1[$i]], [$data2[$i]]);
+
+        // }
+
+
+
+        echo json_encode($dataJSON);
+        // echo json_encode(array_combine($data1, $data2));
+        // echo($data1);
+        // dd($jPendapatan2);
+
     }
 }

@@ -8,12 +8,13 @@ class Model_auth2 extends Model
 {
     protected $table = 'tbl_pengguna';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id', 'username', 'password'];
+    protected $allowedFields = ['id', 'username',  'password'];
 
-    public function login($username, $password)
+    public function login($username,  $password)
     {
         return $this->db->table('tbl_pengguna')->where([
             'username' => $username,
+
             'password' => $password,
         ])->get()->getRowArray();
     }

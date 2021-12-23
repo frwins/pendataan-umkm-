@@ -35,24 +35,155 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <!-- <div class="row mb-3">
+                    <label for="alamat" class="col-sm-2 col-form-label">Alamat Rt/Rw</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>" placeholder="Masukan Alamat lengkap Anda">
-                        <div class="invalid-feedback">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">RT/RW</div>
+                            </div>
+                            <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>" placeholder="Contoh : 4/2">
+                            <div class="invalid-feedback">
                             <?= $validation->getError('alamat'); ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mb-3">
+                </div> -->
+
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Alamat Rt/Rw</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat" name="alamat" value="<?= old('alamat'); ?>">
+                            <input class="form-check-input" type="radio" name="alamat" id="alamat" value="Rt 1 Rw 1">
+                            <label class="form-check-label" for="alamat1">
+                                Rt 1 Rw 1 </label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="alamat" id="alamat" value="Rt 2 Rw 1">
+                            <label class="form-check-label" for="alamat2">
+                                Rt 2 Rw 1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 3 Rw 1">
+                            <label class="form-check-label" for="alamat3">
+                                Rt 3 Rw 1
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 4 Rw 1">
+                            <label class="form-check-label" for="alamat4">
+                                Rt 4 Rw 1
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 5 Rw 1">
+                            <label class="form-check-label" for="alamat5">
+                                Rt 5 Rw 1
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 6 Rw 1">
+                            <label class="form-check-label" for="alamat6">
+                                Rt 6 Rw 1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 7 Rw 1">
+                            <label class="form-check-label" for="alamat7">
+                                Rt 7 Rw 1
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 8 Rw 2">
+                            <label class="form-check-label" for="alamat8">
+                                Rt 8 Rw 2
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 9 Rw 2">
+                            <label class="form-check-label" for="alamat9">
+                                Rt 9 Rw 2
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 10 Rw 2">
+                            <label class="form-check-label" for="alamat10">
+                                Rt 10 Rw 2
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="alamat" id="pekerjaan" value="Rt 11 Rw 2">
+                            <label class="form-check-label" for="alamat11">
+                                Rt 11 Rw 2
+                            </label>
+                        </div>
+
+                        <div class="invalid-feedback">Isi Alamat Dulu</div>
+                    </div>
+                    <div class=" invalid-feedback">
+                        <?= $validation->getError('Alamat'); ?>
+                    </div>
+
+                </fieldset>
+
+
+                <!-- <div class="row mb-3">
                     <label for="pekerjaan" class="col-sm-2 col-form-label">Pekerjaan / Jual Produk</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id=" pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>" placeholder="Masukan Nama Pekerjaan / penjualan Anda">
+                        <input type="text" class="form-control <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id=" pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>" placeholder="Masukan Nama Pekerjaan / penjualan">
                         <div class=" invalid-feedback">
                             <?= $validation->getError('pekerjaan'); ?>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Pekerjaan</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check <?= ($validation->hasError('pekerjaan')) ? 'is-invalid' : ''; ?>" id="pekerjaan" name="pekerjaan" value="<?= old('pekerjaan'); ?>">
+                            <input class="form-check-input" type="radio" name="pekerjaan" id="pekerjaan" value="Guru">
+                            <label class="form-check-label" for="pekerjaan1">
+                                Pedagang </label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="pekerjaan" id="pekerjaan" value="Pedagang">
+                            <label class="form-check-label" for="pendapatan2">
+                                Petani
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pekerjaan" id="pekerjaan" value="Petani">
+                            <label class="form-check-label" for="pekerjaan3">
+                                Nelayan
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pekerjaan" id="pekerjaan" value="Nelayan">
+                            <label class="form-check-label" for="pekerjaan4">
+                                Wiraswasta
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pekerjaan" id="pekerjaan" value="Wiraswasta">
+                            <label class="form-check-label" for="pekerjaan5">
+                                Usaha lainya
+                            </label>
+                        </div>
+                    
+                         
+                        <div class=" invalid-feedback">
+                            <?= $validation->getError('pekerjaan'); ?>
+                        </div>
+                    </div>
+                </fieldset>
                 <fieldset class="row mb-3">
                     <legend class="col-form-label col-sm-2 pt-0">Pendapatan</legend>
                     <div class="col-sm-10">
@@ -96,17 +227,17 @@
                             <?= $validation->getError('pendapatan'); ?>
                         </div>
                     </div>
-
-                    <div class="row mb-3">
-                        <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
-                            <div class=" invalid-feedback">
-                                <?= $validation->getError('telpon'); ?>
-                            </div>
+                </fieldset>
+                <div class="row mb-3">
+                    <label for="telpon" class="col-sm-2 col-form-label">Telpon</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control <?= ($validation->hasError('telpon')) ? 'is-invalid' : ''; ?>" id="telpon" name="telpon" value="<?= old('telpon'); ?>" placeholder="Contoh : 6281233xxxxx">
+                        <div class=" invalid-feedback">
+                            <?= $validation->getError('telpon'); ?>
                         </div>
                     </div>
-                </fieldset>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Tambah Data Diri</a>
             </form>
         </div>

@@ -6,24 +6,78 @@
 
 <div class="container">
     <div class="row">
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-12 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Jumlah Data Diri</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($datadiri3) ?></div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Jumlah Penduduk Desa Brantaksekarjati</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">± 3607</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-users fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Jumlah Pengguna</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($datadiri3) ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-user fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Jumlah Data Diri penduduk</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($datadiri) + count($datadiri2) ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-user-plus fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 py-2 bg-white border shadow rounded">
+                    <div class="col-md-12">
+                        <h4 class="text-dark font-weight-bold">Informasi</h4>
+                        <ul class="timeline">
+
+                            <br>
+                            <p><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">Keterangan fungsi menu sidebar:</span>
+                                <br><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">
+                                <span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">1. Dashboard : Menampilkan informasi yang berkaitan jumhlah penduduk Brantaksekarjati</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">2. Isi data Diri : Mengisi data diri yang sesuai, boleh mengisi lebih dari satu data diri, seperti Keluarga</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">3. Cek Data Diri : Memastikan Data Diri anda benar, terdapat fungsi edit dan hapus</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">4. Ganti Password : Mengganti kata sandi yang lama</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"></span>
+                            </p>
+
+                        </ul>
+
                     </div>
                 </div>
             </div>
         </div>
-
 
         <div class="row">
 
@@ -35,41 +89,7 @@
             </div>
         </div>
 
-        <div class="container">
 
-            <div class="my-3 p-3 bg-body rounded shadow-sm">
-                <h6 class="border-bottom pb-2 mb-0 ">Info Penting</h6>
-                <div class="d-flex text-muted pt-3">
-                    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#007bff" /><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
-                    </svg>
-
-                    <p class="pb-0 mb-0 big lh-sm border-bottom">
-                        <strong class="d-block text-gray-dark">Harap Isi Data Diri dengan benar, Isi sesuai contoh dalam kolom</strong>
-                    </p>
-                </div>
-                <div class="d-flex text-muted pt-3">
-                    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#e83e8c" /><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text>
-                    </svg>
-
-                    <p class="pb-0 mb-0 big lh-sm border-bottom">
-                        <strong class="d-block text-gray-dark">Harap mengisi data diri di hari senin-sabtu (Minggu di Reset oleh Admin)</strong>
-                    </p>
-                </div>
-                <div class="d-flex text-muted pt-3">
-                    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#6f42c1" /><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
-                    </svg>
-                    <p class="pb-0 mb-0 big lh-sm border-bottom">
-                        <strong class="d-block text-gray-dark">Lebih baik mengisi data diri setelah mengumpulkan KK di balaidesa Brantaksekarjati </strong>
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 

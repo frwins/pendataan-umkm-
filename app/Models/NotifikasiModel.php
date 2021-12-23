@@ -8,7 +8,7 @@ class NotifikasiModel extends Model
 {
     protected $table = 'notifikasi';
     protected $primaryKey = 'id_notifikasi';
-    protected $allowedFields = ['username', 'password'];
+    protected $allowedFields = ['username', 'gambar', 'password'];
 
     public function getNotifikasi($id = false)
     {

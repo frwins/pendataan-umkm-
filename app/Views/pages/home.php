@@ -57,20 +57,19 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">Cara Daftar data diri UMKM di desa Brantaksekarjati </h2>
+                <h2 class="text-white mt-0">Cara daftar data diri UMKM di desa Brantaksekarjati </h2>
                     <hr class="divider light my-4" />
-                    <p class="text-white-50 mb-1">~ Mendaftarkan dengan nomer KTP (bagian menu login pengguna, dan buat akun)</p>
+                    <p class="text-white-50 mb-1">~ Klik bagian login pengguna</p>
 
-                    <p class="text-white-50 mb-1">~ Login dengan akun yang sudah dibuat (Form Login)</p>
+                    <p class="text-white-50 mb-1">~ Klik Buat akun</p>
 
-                    <p class="text-white-50 mb-1">~ Daftarkan data diri anda di form yang sudah di berikan (Menu Isi data Diri)</p>
+                    <p class="text-white-50 mb-1">~ Daftarkan data diri anda di form yang sudah di berikan</p>
 
-                    <p class="text-white-50 mb-1">~ Pastikan Anda mengisi form sesuai perintah di kolom form</p>
+                    <p class="text-white-50 mb-1">~ Tunggu sampai admin menujui akun anda</p>
 
-                    <p class="text-white-50 mb-1">~ Edit jika data diri anda salah (Form Cek data diri, dan edit)</p>
+                    <p class="text-white-50 mb-1">~ Jika sudah, Login menggunakan nomer ktp dan sandi anda</p>
 
-                    <p class="text-white-50 mb-1">~ Logout dari akun anda</p>
-
+                    <p class="text-white-50 mb-1">~ Logout dari akun anda jika sudah mengisi data diri</p>
                     <br>
 
                     <p class="text-white-50 mb-1">*Bisa mengisi beberapa data diri, seperti keluarga anda</p>
@@ -130,4 +129,3 @@
 </body>
 
 </html>
-

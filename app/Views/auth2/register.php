@@ -34,9 +34,13 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Register</h1>
                                     </div>
-                                    <form action=" <?= base_url('auth2/save'); ?>" method="post">
+                                    <form action=" <?= base_url('auth2/save'); ?>" method="post" enctype="multipart/form-data">
                                         <?= csrf_field(); ?>
-                                        <?php if (!empty(session()->getFlashdata('fail'))) : ?>
+                                        <?php
+
+                                        use Config\Validation;
+
+                                        if (!empty(session()->getFlashdata('fail'))) : ?>
                                             <div class="alert alert-danger"><?= session()->getFlashdata('fail'); ?></div>
                                         <?php endif ?>
 
@@ -51,6 +55,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label class="form-label" for="">Foto KTP</label>
+                                            <input type="file" class="form-control" id="gambar" name='gambar' </input>
+                                            <span class=" text-danger"><?= isset($validation) ?  display_error($validation, 'gambar') : '' ?></span>
+                                        </div>
+
+                                        <div class=" form-group">
                                             <label for="">Password</label>
                                             <div class="form-group">
                                                 <input type="password" name="password" class="form-control" placeholder="Masukan Password" value="<?= set_value('password'); ?>">
