@@ -61,6 +61,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mt-2 py-2 bg-white border shadow rounded">
+                    <div class="col-md-12">
+                        <h4 class="text-dark font-weight-bold">Informasi</h4>
+                        <ul class="timeline">
+
+                            <br>
+                            <p><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">Keterangan fungsi menu sidebar:</span>
+                                <br><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">
+                                <span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">1. Dashboard : Menampilkan informasi yang berkaitan jumhlah penduduk Brantaksekarjati</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">2. Isi data Diri : Mengisi data diri yang sesuai, boleh mengisi lebih dari satu data diri, seperti Keluarga</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">3. Cek Data Diri : Memastikan Data Diri anda benar, terdapat fungsi edit dan hapus</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;">4. Ganti Password : Mengganti kata sandi yang lama</span><br style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"><span style="color: rgb(32, 33, 36); font-family: Roboto, Arial, sans-serif; font-size: 14px; letter-spacing: 0.2px; white-space: pre-wrap;"></span>
+                            </p>
+
+                        </ul>
+
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -73,6 +88,7 @@
                 <canvas id="myChart1"></canvas>
             </div>
         </div>
+
 
 
     </div>
