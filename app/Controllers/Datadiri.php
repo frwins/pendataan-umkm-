@@ -138,7 +138,7 @@ class Datadiri extends BaseController
         // validasi input
         if (!$this->validate([
             'KTP' => [
-                'rules' => 'required|is_unique[datadiri.KTP]',
+                'rules' => 'required|is_unique[datadiri.KTP]|is_unique[datadiri2.KTP]',
                 'errors' => [
                     'required' => '{field} harus diisi',
                     'is_unique' => '{field} sudah terdaftar'
