@@ -352,10 +352,10 @@ class Datadiri2 extends BaseController
 
         if (!$this->validate([
             'password_lama' => [
-                'rules' => 'required|in_list[' . $password . ']',
+                'rules' => 'required',
                 'errors' => [
                     'required' => 'Password lama harus diisi',
-                    'in_list' => 'Password salah'
+                    
 
                 ]
             ],
@@ -377,15 +377,22 @@ class Datadiri2 extends BaseController
             return redirect()->to('datadiri2/akun-pengguna' . $this->request->getVar('id'))->withInput()->with('validation', $validation);
         }
 
-
-
-        $this->Model_auth2->save([
-            'id' => $id_user,
-            'password' => $this->request->getVar('password_baru'),
-        ]);
-
-        session()->setFlashdata('pesan', 'Password berhasil diubah');
-
-        return redirect()->to('datadiri2/akun-pengguna');
+        // verifikasi password
+        if (password_verify($this->request->getVar('password_lama'), $password))
+        {
+            $this->Model_auth2->save([
+                'id' => $id_user,
+                'password' => password_hash($this->request->getVar('password_baru'), PASSWORD_DEFAULT),
+            ]);
+    
+            session()->setFlashdata('pesan', 'Password berhasil diubah');
+    
+            return redirect()->to('datadiri2/akun-pengguna');
+        }else
+        {
+            session()->setFlashdata('pesan-error', 'Password lama salah');
+    
+            return redirect()->to('datadiri2/akun-pengguna');
+        }
     }
 }

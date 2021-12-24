@@ -79,7 +79,7 @@ class Auth2 extends BaseController
         } else {
             $username = $this->request->getPost('username');
             $gambar = $this->request->getFile('gambar');
-            $password = $this->request->getPost('password');
+            $password = password_hash( $this->request->getPost('password'), PASSWORD_DEFAULT);
             $namagambar = $gambar->getName();
             $gambar->move('img');
 
@@ -129,8 +129,12 @@ class Auth2 extends BaseController
             //jika valid
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
-            $cek = $this->Model_auth2->login($username, $password);
-            if ($cek) {
+            $cek = $this->Model_auth2->loginEmail($username);
+            $passwordDB = $this->Model_auth2->getPassword($username);
+            // var_dump($passwordDB);die;
+            $verifyPassword = password_verify($password, $passwordDB->password);
+
+            if ($cek && $verifyPassword) {
                 //jika data cocok
                 session()->set('log', true);
                 session()->set('username', $cek['username']);

@@ -14,6 +14,11 @@
                     <?= session()->getFlashdata('pesan'); ?>
                 </div>
             <?php endif; ?>
+            <?php if (session()->getFlashdata('pesan-error')) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= session()->getFlashdata('pesan-error'); ?>
+                </div>
+            <?php endif; ?>
 
             <form action="ganti-password" method="post">
                 <?= csrf_field(); ?>
