@@ -109,7 +109,7 @@ class Auth extends BaseController
             //jika valid
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
-            $cek = $this->Model_auth->login($email, $password);
+            $cek = $this->Model_auth->login($email);
             if ($cek) {
                 //jika data cocok
                 session()->set('log', true);
